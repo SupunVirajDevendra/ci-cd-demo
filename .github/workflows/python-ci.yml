@@ -28,7 +28,9 @@ jobs:
     
     - name: Run tests with pytest
       run: |
-        pytest tests/ --cov=src --cov-report=xml
+        python -m pytest tests/ --cov=src --cov-report=xml
+      env:
+        PYTHONPATH: ${{ github.workspace }}
     
     - name: Check code quality with flake8
       run: |
