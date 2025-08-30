@@ -1,8 +1,9 @@
 from calculator import Calculator
 
+
 def main():
     calc = Calculator()
-    
+
     while True:
         print("\nCalculator Menu:")
         print("1. Addition (+)")
@@ -10,17 +11,17 @@ def main():
         print("3. Multiplication (*)")
         print("4. Division (/)")
         print("5. Exit")
-        
+
         choice = input("\nEnter your choice (1-5): ")
-        
+
         if choice == '5':
             print("Thank you for using the calculator!")
             break
-            
+
         try:
             num1 = float(input("Enter first number: "))
             num2 = float(input("Enter second number: "))
-            
+
             if choice == '1':
                 result = calc.add(num1, num2)
                 print(f"\nResult: {num1} + {num2} = {result}")
@@ -38,9 +39,10 @@ def main():
                     print(f"\nError: {e}")
             else:
                 print("\nInvalid choice! Please select 1-5.")
-                
+
         except ValueError:
             print("\nError: Please enter valid numbers!")
+
 
 if __name__ == "__main__":
     main()
